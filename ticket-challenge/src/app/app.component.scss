@@ -1,0 +1,37 @@
+.container {
+    margin-top: 50px;
+  }
+  
+  .stadium-map {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .seat-row {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .seat {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    margin: 2px;
+    cursor: pointer;
+  }
+  
+  .seat.available {
+    background-color: lightgreen;
+  }
+  
+  .seat.reserved {
+    background-color: lightcoral;
+  }
+  
+  .seat:hover {
+    background-color: #f2f2f2;
+  }

@@ -1,1 +1,11 @@
 <!-- You should implement the UI just like the plan-desing file -->
+<table>
+    <tr *ngFor="let row of mapDetail; let rowIndex = index">
+        <td *ngFor="let seat of row; let columnIndex = index" [ngClass]="{
+          reserved: seat === 1,
+          available: seat === 0,
+          selected: isHighlighted(columnIndex, rowIndex)
+        }" (click)="onSeatClick(columnIndex, rowIndex)">
+        </td>
+    </tr>
+</table>

@@ -1,17 +1,12 @@
-<div>
+<div *ngIf="!selectedMapId">
     <section>
-        <!-- 
-            You should get the list of values from https://ticket-challange.herokuapp.com/map
-            Each span should link to the plan page of that salon.
-        -->
-        <span>سالن ۱</span>
-        <span>سالن ۲</span>
-        <span>سالن ۳</span>
-        <span>سالن ۴</span>
-        <span>سالن ۵</span>
-        <span>سالن ۶</span>
-        <span>سالن ۷</span>
-        <span>سالن ۸</span>
-        <span>سالن ۹</span>
+        <span *ngFor="let map of maps;let index=index" (click)="selectMap(map,index)">سالن {{index+1}}</span>
     </section>
+</div>
+
+<div *ngIf="selectedMapId">
+    <h2>سالن {{indexPlanSelected}} :</h2>
+    <app-plan [mapDetail]="mapDetail" [selectedSeats]="selectedSeats"
+        (seatSelected)="onSeatSelected($event)"></app-plan>
+    <input type="button" (click)="onSaveChange()" value="ثبت رزرو" class="button"/>
 </div>
